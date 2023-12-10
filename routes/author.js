@@ -7,7 +7,7 @@ router.get('/', async function(req, res, next) {
     const rows = await con.query('SELECT * from  Author ;');
     console.table(rows);
 
-    res.render('author');
+    res.render("author",{title:"Author", authors : rows});
   });
   
   module.exports = router;
